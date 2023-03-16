@@ -139,9 +139,9 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME' : "dug5dj4uz", 
-    'API_KEY' : "511662143919781", 
-    'API_SECRET' : "-aQgtcODPgeCONtd4WUm841r3wk",
+    'CLOUD_NAME' : os.environ.get('CLOUD_NAME'),
+    'API_KEY' : os.environ.get('API_KEY'),
+    'API_SECRET' : os.environ.get('API_SECRET')
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
