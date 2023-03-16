@@ -1,6 +1,7 @@
 {% extends 'blogApp/Base.html' %}
 {% load static %}
 {% block content %}
+<a href="{% url 'home' %}" style="text-decoration: none; color: rgb(9, 10, 96);"><h4> ←Go Back</h4></a>
 <div class="col-md-6 mx-auto" id="card" style="width: 30rem;">
     <div class="card-header">
         <h2>{{user.username}}</h2>
