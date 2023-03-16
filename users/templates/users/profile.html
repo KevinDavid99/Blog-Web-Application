@@ -1,0 +1,32 @@
+{% extends 'blogApp/Base.html' %}
+{% load static %}
+{% block content %}
+<div class="col-md-6 mx-auto" id="card" style="width: 30rem;">
+    <div class="card-header">
+        <h2>{{user.username}}</h2>
+        <img src="{{user.profile.image.url}}" style=" width: 250px; height:max-content">
+    </div>
+    <div class="card-body">
+      <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <legend class="border-bottom mb-4">Profile Info</legend>
+          <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              {{user_form.username}}
+          </div>
+          <div class="mb-3">
+              <label for="bio" class="form-label">Bio</label>
+              {{profile_form.bio}}
+          </div>
+          <div class="mb-3" style="word-wrap: break-word;">
+              <label for="image-file" class="form-label">Image</label>
+              {{profile_form.image}}
+          </div>
+          <button type="submit" class="btn btn-secondary" style="border-radius: 20px;">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}

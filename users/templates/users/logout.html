@@ -1,0 +1,14 @@
+{% extends 'blogApp/Base.html' %}
+{% block content %}
+
+<div class="col-md-6 mx-auto" id="card" style="width: 30rem;">
+    <div class="card-header">
+        <h2>You Logged Out</h2>
+    </div>
+    <div class="card-body">
+        <h5>Log in again</h5>
+        <a href="{% url 'login' %}"><button type="submit" class="btn btn-secondary" style="border-radius: 20px;">Login</button></a>
+    </div>
+</div>
+
+{% endblock content %}

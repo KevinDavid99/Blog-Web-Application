@@ -1,0 +1,31 @@
+{% extends 'blogApp/Base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-md-6 mx-auto" id="card" style="width: 30rem;">
+    <div class="card-header">
+        <h2>Login</h2>
+    </div>
+    <div class="card-body">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="name" class="form-control" name="username" placeholder="Username">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Password">
+                <p>Dont have an account? <a href="{% url 'register' %}">Register</a></p>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Click this or else...</label>
+            </div>
+            <button type="submit" value="Login" class="btn btn-secondary" style="border-radius: 20px;">Login</button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

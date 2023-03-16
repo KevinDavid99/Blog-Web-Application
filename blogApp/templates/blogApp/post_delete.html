@@ -1,0 +1,23 @@
+{% extends 'blogApp/Base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="content-section" style="display: flex; justify-content: center;">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Delete post</legend>
+            <h2>Are you sure you want to delete this post </h2>
+        </fieldset>
+        <div class="form-group">
+            <button style="border-radius: 20px;" class="btn btn-danger" type="submit">Yes, Delete</button>
+            <a style="border-radius: 20px;" class="btn btn-secondary" href="{{ request.META.HTTP_REFERER }}">Cancel</a>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+{% endblock content %}

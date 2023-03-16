@@ -1,0 +1,31 @@
+{% extends 'blogApp/Base.html' %}
+{% load static %}
+{% block content %}
+<div class="container" id="card" style="padding:40px; ">
+    <div class="card-header">
+        <h2>{{posts.title}}</h2>
+        <small>Created by <strong><a style="text-decoration: none; color: rgb(23, 39, 128);" href="#">@{{ posts.author }}</a></strong></small><br>
+        <small>Posted {{ posts.date_posted|timesince }} ago</small>  <hr>
+    </div>
+    <div class="card-body">
+         <p>
+           {{ posts.content }}
+         </p>
+        {% if posts.author == user %}
+        <a href="{% url 'post-update' posts.id %}"><button type="submit" class="btn btn-secondary" style="border-radius: 20px;">Update</button></a>
+        <a href="{% url 'post-delete' posts.id %}"><button type="submit" class="btn btn-danger" style="border-radius: 20px;">Delete</button></a>
+        {% endif %}
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
